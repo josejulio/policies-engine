@@ -89,7 +89,9 @@ public abstract class ConditionEval implements Serializable {
 
     public void setEvalTimestamp(long evalTimestamp) {
         this.evalTimestamp = evalTimestamp;
-        condition.setLastEvaluation(evalTimestamp);
+        if (condition != null) {
+            condition.setLastEvaluation(evalTimestamp);
+        }
     }
 
     public long getDataTimestamp() {
